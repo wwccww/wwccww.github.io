@@ -9,15 +9,16 @@ redirect_from:
 
 ## About me
 
-Hi! I am **Chenwei Wang**, a Ph.D. student at The University of Hong Kong (HKU), working on robotic manipulation and medical robotics under the supervision of Prof. Zhongliang Jiang. I received my M.Phil. in Computer and Information Engineering from The Chinese University of Hong Kong, Shenzhen (CUHK-Shenzhen), supervised by Prof. Zhenglong Sun. My master's research focused on autonomous robotic ultrasound-guided diagnosis and biopsy for superficial organs.
+Hi! I am **Chenwei Wang**, a Ph.D. student at The University of Hong Kong (HKU), working on robotic manipulation and medical robotics in the Medical Intelligence and Robotic Recognition (MIRoC) Lab under the supervision of Prof. [Zhongliang Jiang](https://scholars.hku.hk/en/persons/zhongliang-jiang). I received my M.Phil. in Computer and Information Engineering from The Chinese University of Hong Kong, Shenzhen (CUHK-Shenzhen), supervised by Prof. Zhenglong Sun. My master's research focused on autonomous robotic ultrasound-guided diagnosis and biopsy for superficial organs.
 
-Before joining HKU, I was a research intern at the Institute of AI, China Telecom (TeleAI), working under the supervision of Dr. Chenjia Bai and Dr. Yang Zhang. My work focused on cross-embodiment imitation learning and real-world reinforcement fine-tuning for vision-language-action (VLA) models. My current research interests lie at the intersection of robot learning, egocentric data in embodied AI, and medical robotics.
+Before joining HKU, I was a research intern at the Institute of AI, China Telecom (TeleAI), working under the supervision of Dr. [Chenjia Bai](https://baichenjia.cn/) and Dr. [Yang Zhang](https://breez3young.github.io/). My work focused on cross-embodiment imitation learning and real-world reinforcement fine-tuning for vision-language-action (VLA) models. My current research interests lie at the intersection of robot learning, egocentric data in embodied AI, and medical robotics.
 
 I am always open to research discussions and collaboration. Please feel free to contact me by [email](mailto:chenweiwang@connect.hku.hk).
 
 ## Education
 
-- **Jan. 2026 – Present**, The University of Hong Kong, Ph.D. Student
+- **Jan. 2026 – Present**, The University of Hong Kong, Ph.D. Student<br>
+  Lab: Medical Intelligence and Robotic Recognition (MIRoC) Lab
 - **Sept. 2023 – Nov. 2025**, The Chinese University of Hong Kong, Shenzhen, M.Phil. in Computer and Information Engineering<br>
   Supervisor: Prof. Zhenglong Sun ·
 - **Sept. 2019 – June 2023**, Jilin University, B.Eng. in Electronic Information Engineering<br>
