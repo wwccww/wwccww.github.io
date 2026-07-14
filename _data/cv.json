@@ -1,152 +1,195 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Chenwei Wang",
+    "email": "chenweiwang@connect.hku.hk",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "",
+    "summary": "Ph.D. Student",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
+      "city": "Pokfulam, Hong Kong",
+      "countryCode": "HK, CN",
       "region": ""
     },
-    "profiles": [
-      {
-        "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
-      },
-      {
-        "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
-      }
-    ]
+    "profiles": []
   },
-  "work": [],
+  "work": [
+    {
+      "company": "Institute of AI China Telecom (TeleAI)",
+      "position": "Research Intern",
+      "website": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        "Developed a dual-autoencoder framework for efficient cross-robot fine-tuning using asymmetric Info-VAEs and a unified cross-embodiment action space.",
+        "Validated RDT policies in RoboTwin/ManiSkill3 and conducted preliminary deployment on a Unitree H1-2 humanoid with a RoboTera dexterous hand.",
+        "Designed a recursive action-averaging strategy for smooth and robust real-world control.",
+        "Developed a sparse-data VLA fine-tuning pipeline combining trajectory/video augmentation with real-world reinforcement learning."
+      ]
+    },
+    {
+      "company": "The Chinese University of Hong Kong Shenzhen",
+      "position": "Graduate Researcher",
+      "website": "",
+      "startDate": "2023",
+      "endDate": "2024",
+      "summary": "",
+      "highlights": [
+        "Built a fully autonomous ultrasound-guided biopsy system using a UR5e arm, ROS, U-Net++, 3D reconstruction, slice-to-volume registration, force/pose control, and reinforcement learning.",
+        "Proposed a robot-assisted quantitative compression elastography framework for accurate elasticity measurement."
+      ]
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
+      "institution": "The University of Hong Kong",
+      "area": "Ph.D. student",
       "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "startDate": "Jan. 2026",
+      "endDate": "Present",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
+      "institution": "The Chinese University of Hong Kong Shenzhen",
+      "area": "M.Phil. in Computer and Information Engineering",
       "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
+      "startDate": "Sept. 2023",
+      "endDate": "Nov. 2025",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
+      "institution": "Jilin University",
+      "area": "B.Eng. in Electronic Information Engineering",
       "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "startDate": "Sept. 2019",
+      "endDate": "June 2023",
       "gpa": null,
       "courses": []
     }
   ],
   "skills": [],
+  "projects": [
+    {
+      "name": "Development of Data Collection System and Real-World Deployment Experiments on DP3 (Apr. 2025 \u2013 May 2025)<br>",
+      "startDate": "",
+      "endDate": "Apr. 2025 \u2013 May 2025",
+      "description": "Developed data-collection tooling for the RoboTera dexterous hand and Unitree H1-2 humanoid, supported real-world DP3 deployment experiments, and contributed to paper writing.",
+      "highlights": [],
+      "url": ""
+    },
+    {
+      "name": "Action Chunking Transformer Reimplementation and Demonstration at DTEC (Nov. 2024 \u2013 Dec. 2024)<br>",
+      "startDate": "",
+      "endDate": "Nov. 2024 \u2013 Dec. 2024",
+      "description": "Contributed to teleoperation development and ACT/OpenTeleVision reproduction and adaptation; demonstrated the system at the TeleAI Developer Conference.",
+      "highlights": [],
+      "url": ""
+    },
+    {
+      "name": "Spectrum-Sensing Chip for Explosive Detection (Dec. 2022 \u2013 May 2023)<br>",
+      "startDate": "",
+      "endDate": "Dec. 2022 \u2013 May 2023",
+      "description": "Graduation project awarded Excellent Graduation Design by the School of Electronic Science and Engineering, Jilin University.",
+      "highlights": [],
+      "url": ""
+    },
+    {
+      "name": "Vehicle Intelligent-Arm Grasping System Based on Motion Matching (May 2021 \u2013 May 2022)<br>",
+      "startDate": "",
+      "endDate": "May 2021 \u2013 May 2022",
+      "description": "Team leader; awarded Outstanding Provincial Project.",
+      "highlights": [],
+      "url": ""
+    }
+  ],
+  "awards": [
+    {
+      "title": "Nominee for the Outstanding Graduate Student Award, The Chinese University of Hong Kong, Shenzhen, 2025",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "Top-Performing Intern, Institute of AI, China Telecom (TeleAI), 2025",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "Best Conference Paper Finalist nominee, IEEE RCAR, 2024",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "Excellent Graduation Design, School of Electronic Science and Engineering, Jilin University",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "Digital Technology Ecosystem Conference (DTEC), 2024 \u2014 Represented TeleAI and demonstrated embodied-AI and robotic technologies to academic, industry, and developer audiences.",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "World Artificial Intelligence Conference (WAIC), 2025 \u2014 Supported the preparation and coordination of TeleAI's exhibition and its on-site technology demonstrations.",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "Embodied Intelligence Hub (\u5177\u8eab\u667a\u80fd\u4e4b\u5fc3), 2025 \u2014 Presented TeleAI's robotic research in a livestream, demonstrating real-world embodied-intelligence systems and experimental results.",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "Jiqizhixin (\u673a\u5668\u4e4b\u5fc3), 2025 \u2014 TeleAI's embodied-AI and robotics work was featured in technical media coverage.",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    }
+  ],
   "languages": [],
   "interests": [],
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "Robotic Assistance for Standardized Compression Ultrasound Elastography",
+      "publisher": "IEEE International Conference on Real-time Computing and Robotics (RCAR)",
+      "releaseDate": "2024-01-01",
+      "website": "",
+      "summary": "A robot-assisted quantitative compression elastography framework for accurate elasticity measurement. Best Conference Paper Finalist nominee."
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "Enhancing Dexterous Diffusion Policy with Predictive 3D Representations",
+      "publisher": "Under review at IEEE Transactions on Cybernetics",
+      "releaseDate": "2025-01-01",
+      "website": "",
+      "summary": "Under review at IEEE Transactions on Cybernetics. Chenwei Wang led the real-world robotic experiments."
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "Towards Fully Autonomous Robotic Ultrasound-Guided Biopsy for Superficial Organs",
+      "publisher": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "releaseDate": "2025-01-01",
+      "website": "",
+      "summary": "A fully autonomous ultrasound-guided biopsy system integrating image analysis, 3D reconstruction, registration, robot control, and reinforcement learning."
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance",
+      "publisher": "The Fourteenth International Conference on Learning Representations (ICLR)",
+      "releaseDate": "2026-01-01",
+      "website": "https://align-then-steer.github.io/",
+      "summary": "A data-efficient, plug-and-play framework for adapting vision-language-action models across tasks and robot embodiments through unified latent guidance."
     }
   ],
-  "presentations": [
-    {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
-    }
-  ],
-  "teaching": [
-    {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
-    },
-    {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
-    }
-  ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "presentations": [],
+  "teaching": [],
+  "portfolio": []
 }

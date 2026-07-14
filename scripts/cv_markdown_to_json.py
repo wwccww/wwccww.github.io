@@ -28,21 +28,26 @@ def parse_markdown_cv(md_file):
     # Remove YAML front matter
     content = re.sub(r'^---.*?---\s*', '', content, flags=re.DOTALL)
     
-    # Extract sections
+    # Extract underlined or ATX-style Markdown sections. Requiring real heading
+    # syntax avoids treating a short prose line as a section title.
     sections = {}
     current_section = None
     section_content = []
-    
-    for line in content.split('\n'):
-        if re.match(r'^=+$', line):
-            continue
-        
-        section_match = re.match(r'^([A-Za-z\s]+)$', line.strip())
-        if section_match and len(line.strip()) > 0:
+    lines = content.splitlines()
+
+    for index, line in enumerate(lines):
+        stripped = line.strip()
+        next_line = lines[index + 1].strip() if index + 1 < len(lines) else ''
+        atx_match = re.match(r'^#{1,6}\s+(.+?)\s*#*$', stripped)
+        is_underlined_heading = bool(stripped and re.match(r'^[=-]{3,}$', next_line))
+
+        if atx_match or is_underlined_heading:
             if current_section:
                 sections[current_section] = '\n'.join(section_content).strip()
                 section_content = []
-            current_section = section_match.group(1).strip()
+            current_section = atx_match.group(1).strip() if atx_match else stripped
+        elif re.match(r'^[=-]{3,}$', stripped):
+            continue
         elif current_section:
             section_content.append(line)
     
@@ -51,6 +56,15 @@ def parse_markdown_cv(md_file):
         sections[current_section] = '\n'.join(section_content).strip()
     
     return sections
+
+
+def get_section(sections, *names):
+    """Return a section using case-insensitive aliases."""
+    normalized = {name.casefold(): value for name, value in sections.items()}
+    for name in names:
+        if name.casefold() in normalized:
+            return normalized[name.casefold()]
+    return ''
 
 def parse_config(config_file):
     """Parse the Jekyll _config.yml file for additional information."""
@@ -74,7 +88,7 @@ def extract_author_info(config):
             "address": "",
             "postalCode": "",
             "city": "",
-            "countryCode": "US",
+            "countryCode": "",
             "region": ""
         },
         "profiles": []
@@ -96,16 +110,13 @@ def extract_author_info(config):
         if author.get('location'):
             author_info['location']['city'] = author.get('location', '')
         
-        # Add employer as part of summary
-        if author.get('employer'):
-            author_info['summary'] = f"Currently employed at {author.get('employer')}"
-        
-        # Add bio to summary if available
+        # The sidebar employer field may describe an affiliation rather than
+        # current employment, so keep the JSON summary to the author's bio.
         if author.get('bio'):
-            if author_info['summary']:
-                author_info['summary'] += f". {author.get('bio')}"
-            else:
-                author_info['summary'] = author.get('bio')
+            author_info['summary'] = author.get('bio')
+
+        if author.get('country_code'):
+            author_info['location']['countryCode'] = author.get('country_code')
         
         # Add social profiles
         profiles = []
@@ -167,9 +178,14 @@ def parse_education(education_text):
     
     for entry in entries:
         # Parse degree, institution, and year
-        match = re.match(r'([^,]+), ([^,]+), (\d{4})(.*)', entry.strip())
+        match = re.match(r'([^,]+), ([^,]+), (\d{4}|present)(.*)', entry.strip(), re.IGNORECASE)
         if match:
             degree, institution, year, additional = match.groups()
+
+            # Prefer the explicit date range in parentheses when present.
+            date_range_match = re.search(r'\(([^()]+?)\s*[–-]\s*([^();]+)', additional)
+            start_date = date_range_match.group(1).strip() if date_range_match else ""
+            end_date = date_range_match.group(2).strip() if date_range_match else year.strip()
             
             # Extract GPA if available
             gpa_match = re.search(r'GPA: ([\d\.]+)', additional)
@@ -179,8 +195,8 @@ def parse_education(education_text):
                 "institution": institution.strip(),
                 "area": degree.strip(),
                 "studyType": "",
-                "startDate": "",
-                "endDate": year.strip(),
+                "startDate": start_date,
+                "endDate": end_date,
                 "gpa": gpa,
                 "courses": []
             })
@@ -247,6 +263,44 @@ def parse_skills(skills_text):
         })
     
     return skills_entries
+
+
+def parse_projects(projects_text):
+    """Parse bullet-list projects into JSON Resume project objects."""
+    projects = []
+    entries = re.findall(r'^\* (.*?)(?=^\* |\Z)', projects_text, re.MULTILINE | re.DOTALL)
+
+    for entry in entries:
+        lines = [line.strip() for line in entry.strip().splitlines() if line.strip()]
+        if not lines:
+            continue
+        heading = re.sub(r'\*\*(.*?)\*\*', r'\1', lines[0])
+        name = re.sub(r'\s*\([^)]*\)\s*$', '', heading).strip()
+        date_match = re.search(r'\(([^)]*)\)', heading)
+        projects.append({
+            "name": name,
+            "startDate": "",
+            "endDate": date_match.group(1) if date_match else "",
+            "description": " ".join(lines[1:]),
+            "highlights": [],
+            "url": ""
+        })
+
+    return projects
+
+
+def parse_awards(awards_text):
+    """Parse a simple Markdown bullet list of awards."""
+    awards = []
+    for entry in re.findall(r'^\*\s+(.+)$', awards_text, re.MULTILINE):
+        title = re.sub(r'\*\*(.*?)\*\*', r'\1', entry.strip())
+        awards.append({
+            "title": title,
+            "date": "",
+            "awarder": "",
+            "summary": ""
+        })
+    return awards
 
 def parse_publications(pub_dir):
     """Parse publications from the _publications directory."""
@@ -378,9 +432,17 @@ def create_cv_json(md_file, config_file, repo_root, output_file):
     # Create the JSON structure
     cv_json = {
         "basics": author_info,
-        "work": parse_work_experience(sections.get('Work experience', '')),
-        "education": parse_education(sections.get('Education', '')),
-        "skills": parse_skills(sections.get('Skills', '')),
+        "work": parse_work_experience(get_section(sections, 'Work experience', 'Research experience')),
+        "education": parse_education(get_section(sections, 'Education')),
+        "skills": parse_skills(get_section(sections, 'Skills')),
+        "projects": parse_projects(get_section(sections, 'Projects')),
+        "awards": parse_awards(get_section(
+            sections,
+            'Awards and honors',
+            'Awards & Honors',
+            'Awards and experience',
+            'Awards & Experience'
+        )),
         "languages": [],
         "interests": [],
         "references": []

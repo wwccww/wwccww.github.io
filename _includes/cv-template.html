@@ -144,6 +144,38 @@
     </div>
   </div>
   {% endif %}
+
+  {% if cv.projects.size > 0 %}
+  <!-- Projects -->
+  <div class="cv-section">
+    <h2>Projects</h2>
+    <ul class="cv-list">
+      {% for project in cv.projects %}
+      <li class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-item-title">{{ project.name }}</div>
+          {% if project.endDate %}<div class="cv-item-date">{{ project.endDate }}</div>{% endif %}
+        </div>
+        {% if project.description %}<div class="cv-item-detail">{{ project.description }}</div>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if cv.awards.size > 0 %}
+  <!-- Awards -->
+  <div class="cv-section">
+    <h2>Awards &amp; Honors</h2>
+    <ul class="cv-list">
+      {% for award in cv.awards %}
+      <li class="cv-item">
+        <div class="cv-item-title">{{ award.title }}</div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
   
   {% if cv.publications.size > 0 %}
   <!-- Publications -->

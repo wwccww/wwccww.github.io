@@ -6,4 +6,6 @@ services:
     ports: [ 4000:4000 ]
     user: 1000:1000
     environment: [ JEKYLL_ENV=docker ]
-    command: jekyll serve -H 0.0.0.0 -w --config _config.yml,_config_docker.yml
+    # Poll for file changes instead of using inotify. This is more reliable on
+    # shared servers where the host's inotify watch limit may already be full.
+    command: jekyll serve -H 0.0.0.0 -w --force_polling --config _config.yml,_config_docker.yml
