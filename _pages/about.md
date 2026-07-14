@@ -18,7 +18,8 @@ I am always open to research discussions and collaboration. Please feel free to 
 ## Education
 
 - **Jan. 2026 – Present**, The University of Hong Kong, Ph.D. Student<br>
-  Lab: Medical Intelligence and Robotic Recognition (MIRoC) Lab
+  Lab: Medical Intelligence and Robotic Recognition (MIRoC) Lab<br>
+  Supervisor: Prof. [Zhongliang Jiang](https://scholars.hku.hk/en/persons/zhongliang-jiang)
 - **Sept. 2023 – Nov. 2025**, The Chinese University of Hong Kong, Shenzhen, M.Phil. in Computer and Information Engineering<br>
   Supervisor: Prof. [Zhenglong Sun](https://sse.cuhk.edu.cn/faculty/sunzhenglong)
 - **Sept. 2019 – June 2023**, Jilin University, B.Eng. in Electronic Information Engineering<br>
